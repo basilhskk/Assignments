@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  @include('parts.head')
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  @include('parts.nav')
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-3">
+        <h1 class="my-4"></h1>
+        <div class="list-group">
+          <a  href ="#" onclick="window.history.back();" class="list-group-item active"> &larr; Πίσω</a>
+        </div>
+      </div>
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+
+        <div class="card mt-4">
+          <div class="card-body"><h3>Διαθέσιμα Hotspot</h3>
+            <iframe src="https://www.google.com/maps/d/embed?mid=1sV3XCyFAl4Tc4bo8cPNHiOAc_VKjnwfX" width="785" height="528"></iframe>
+          </div>
+        </div>
+        <!-- /.card -->
+
+<br><br>
+        <!-- /.card -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  @include('parts.footbar')
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+function changeValue(){
+const posothta = document.getElementById('posothta');
+const timh = document.getElementById('timh');
+
+console.log()
+
+timh.value = posothta.value*5
+}
+</script>
+</body>
+
+</html>

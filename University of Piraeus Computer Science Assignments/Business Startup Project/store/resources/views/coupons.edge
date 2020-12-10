@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+   @include('parts.head')
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+    @include('parts.nav')
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-3">
+
+        <h2 class="my-4">Επιλογές</h2>
+        <div class="list-group">
+        @if(auth.user.role == 'farm')
+          <a  href="/" class="list-group-item">Αγορά</a>
+        @endif
+        @if(auth.user.role == 'supplier')
+          <a  href="/" class="list-group-item">Ανταλλαγή</a>
+        @endif
+          <a  href="/coupons" class="list-group-item">Κουπόνια</a>
+          <a  href="/profile" class="list-group-item">Προφίλ</a>
+
+        </div>
+
+      </div>
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+      <center style="margin:10px;"><h2>Επιλογή κατηγορίας κουπονιού</h2></center>
+        <div class="row" style="padding-top:100px;">
+
+          @each(category in categories)
+            
+          <div class="col-lg-6 col-md-6 mb-6">
+            <div class="card h-100" >
+              <a href="#"><img class="card-img-top" src="{{category.type}}.png" alt=""  style = "height: 300px"></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="/add-product/{{category.id}}">{{category.name}}</a>
+                </h4>
+                <p class="card-text"></p>
+              </div>
+              <!-- <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              </div> -->
+            </div>
+          </div>
+
+          @endeach
+
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  @include('parts.footbar')
+
+
+</body>
+<script>
+link(val){
+
+}
+</script>
+</html>

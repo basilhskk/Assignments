@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Ο Μαθηματικός</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Custom styles for this template -->
+  <style>
+    body{
+      padding-top: 56px;
+    }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Ο Μαθηματικός</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Αρχική
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#"></a>
+        </li>
+
+        @if(auth.user.role == 'admin')
+        <li class="nav-item">
+          <a class="nav-link" href="/add-product" style="color:white">Προσθήκη Λειτουργίας</a>
+          <span class="sr-only">(current)</span>
+        </li>
+        @endif
+          @if(auth.user)
+          <li class="nav-item active">
+            <a class="nav-link"> <span style="color:white"> Γειά σου </span> <span style="color:green">{{auth.user.username}}</span> !</a>
+            <span class="sr-only">(current)</span>
+          </li>
+          @endif
+          @if(auth.user)
+          <li>
+            <a class="nav-link active" href="/help">Βοήθεια
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          @endif
+          <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+          </li>
+          @if(auth.user)
+          <li>
+            <a class="nav-link" href="/logout">Αποσύνδεση</a>
+          </li>
+          @endif
+          
+          @if(!auth.user)
+          <li>
+            <a class="nav-link" href="/login"><span style="color:white">Είσοδος</span></a>
+          </li>
+          @endif
+          @if(!auth.user)
+          <li>
+            <a class="nav-link" href="/register"><span style="color:white">Εγγραφή</span></a>
+          </li>
+          @endif
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="container">
+    <br />
+    <br />
+
+    <div class="" id="accordion">
+        <div class="faqHeader">Βοήθεια </div>
+        <div class="card ">
+            <div class="card-header">
+                <h4 class="card-header">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Περίεργο μήνυμα στην αρχική</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="card-block">
+                    <img src="/img/home.png" width="1100" height="550">
+                    <p style="font-size:20px;">Αν δείς αυτή την ειδοποίηση σημαίνει οτι έχεις κάνει λάθος σε τεστ αυτοαξιολόγησης πάνω απο 3 φορές και σε προτρέπουμε να ξαναδιαβάσεις την προπαίδεια! </p>
+                </div>
+            </div>
+        </div>
+        <div class="card ">
+            <div class="card-header">
+                <h4 class="card-header">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">Δεν μπορώ να υποβάλλω τα τεστ</a>
+                </h4>
+            </div>
+            <div id="collapseTen" class="panel-collapse collapse">
+                <div class="card-block">
+                    <img src="/img/testpage.png" width="1100" height="550">
+                    <p style="font-size:20px;">Αν δεν μπορείς να υποβάλεις τα τεστ πρέπει να έχει συμπληρώσει όλα τα πεδία και μόνο με αριθμούς.</p>
+                </div>
+            </div>
+        </div>
+        <div class="card ">
+            <div class="card-header">
+                <h4 class="card-header">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">Αυτό θα δεις σε περίπτωση αποτυχίας του τεστ</a>
+                </h4>
+            </div>
+            <div id="collapseEleven" class="panel-collapse collapse">
+                <div class="card-block">
+                    <img src="/img/failtest.png" width="1100" height="550">
+                    <p style="font-size:20px;">Αν δείς αυτή την εικόνα σημαίνει οτι έχεις κάνει έστω και μια ερώτηση λάθος ! </p>
+                </div>
+            </div>
+        </div>
+        <div class="card ">
+            <div class="card-header">
+                <h4 class="card-header">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Αυτό θα δεις σε περίπτωση επιτυχίας του τεστ</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="card-block">
+                    <img src="/img/successTest.png" width="1100" height="550">
+                    <p style="font-size:20px;">Αν δείς αυτή την εικόνα σημαίνει οτι έχει τελειώσει το τέστ με επιτυχία .</p>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+    </div>
+</div>
+
+<style>
+    .faqHeader {
+        font-size: 27px;
+        margin: 20px;
+    }
+
+    .panel-heading [data-toggle="collapse"]:after {
+        font-family: 'Glyphicons Halflings';
+        content: "e072"; /* "play" icon */
+        float: right;
+        color: #F58723;
+        font-size: 18px;
+        line-height: 22px;
+        /* rotate "play" icon from > (right arrow) to down arrow */
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+
+    .panel-heading [data-toggle="collapse"].collapsed:after {
+        /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        color: #454444;
+    }
+</style>
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Ο μαθηματικός 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+
+</body>
+</html>

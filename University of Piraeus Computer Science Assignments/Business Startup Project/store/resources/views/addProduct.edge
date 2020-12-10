@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  @include('parts.head')
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  @include('parts.nav')
+
+  @if(err)
+    <span style="color:red" >{{err}}</span>           
+  @endif
+
+@if(succ)
+  <span style="color:green" >{{succ}}</span>           
+@endif
+
+  <!-- Page Content -->
+  <div class="container" >
+    @if(auth.user.role == 'farm')
+    <center style="margin:10px;"> <h3> Προσθήκη Κουπονιού </h3> </center>
+    @endif
+
+    @if(auth.user.role == 'supplier')
+      <center style="margin:10px;"> <h3> Προσθήκη Προιόντος </h3> </center>
+    @endif
+    
+    <div class="row" style="padding-bottom:56px;">
+
+      <div class="col-lg-3">
+
+        <div class="list-group">
+
+         
+        </div>
+
+      </div>
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+        <div class="row" style="padding-top:100px;">
+          @if(auth.user.role == 'supplier')
+
+            <form method="POST" action="/add-product" style = "width:100%">
+              {{ csrfField() }}
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Όνομα</label>
+                    <input type="text" class="form-control" name="name" id="inputEmail4" placeholder="Όνομα">
+                  </div>
+
+
+                                  
+                  <div class="form-group col-md-6">
+                        <label for="inlineFormInputGroupUsername">Ποσότητα</label>
+
+                  <div class="input-group" >
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">kg</div>
+                    </div>
+                    <input type="text" class="form-control" name ="quantity" id="inlineFormInputGroupUsername" placeholder="Ποσότητα">
+                  </div>
+                  </div>
+                  
+                </div>
+
+
+                <div class="form-row">
+
+                  <div class="form-group col-md-12">
+                    <label for="inputAddress">Περιγραφή</label>
+                    <input type="text" class="form-control" name="description" id="inputAddress" placeholder="Περιγραφή"> 
+                  </div>
+                </div>
+
+                  <div class="form-group col-md-12" style="padding-left: 0px">
+                    <label for="inputState">Κατηγορία</label>
+                    <select name="category" inputState" class="form-control">
+                    @each(category in categories)
+                    <option value="{{category.id}}">{{category.name}}</option>
+                    @endeach
+                    </select>
+                  </div>
+                  <input type="hidden" name="_type" value="product" > 
+
+                <button type="submit" class="btn btn-success">Προσθήκη Προιόντος</button>
+              </form>
+
+          @endif
+
+          @if(auth.user.role == 'farm')
+            
+            <form method="POST" action="/add-product" style = "width:100%">
+              {{ csrfField() }}
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Όνομα</label>
+                    <input type="text" class="form-control" name="name" id="inputEmail4" placeholder="Όνομα">
+                  </div>
+              
+                  <div class="form-group col-md-6">
+                        <label for="inlineFormInputGroupUsername">Έκπτωση</label>
+
+                  <div class="input-group" >
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">&euro;</div>
+                    </div>
+                    <input type="text" class="form-control" name ="discount" id="inlineFormInputGroupUsername" placeholder="Έκπτωση">
+                  </div>
+                  </div>
+                  
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputAddress">Περιγραφή</label>
+                    <input type="text" class="form-control" required name="description" id="inputAddress" placeholder="Περιγραφή"> 
+                  </div>
+                   <div class="form-group col-md-6">
+                    <label for="inputEmail4">Πόντοι Εξαργύρωσης</label>
+                    <input type="number" class="form-control" name="points" id="inputEmail4" placeholder="Πόντοι Εξαργύρωσης" required>
+                  </div>
+                </div>
+
+                  <div class="form-group col-md-12" style="padding-left: 0px">
+                    <label for="inputState">Κατηγορία</label>
+                    <select name="category" inputState" class="form-control">
+                    @each(category in categories)
+                    <option value="{{category.id}}">{{category.name}}</option>
+                    @endeach
+                    </select>
+                  </div>
+                  <input type="hidden" name="_type" value="coupon" > 
+
+                <button type="submit" class="btn btn-success">Προσθήκη Κουπονιού</button>
+            </form>
+
+          @endif
+
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  @include('parts.footbar')
+
+
+
+</body>
+</html>

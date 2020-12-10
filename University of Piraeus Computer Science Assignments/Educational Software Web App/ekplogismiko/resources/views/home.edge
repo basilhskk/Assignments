@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Ο Μαθηματικός</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Custom styles for this template -->
+  <style>
+    body{
+      padding-top: 56px;
+    }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Ο Μαθηματικός</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Αρχική
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#"></a>
+        </li>
+
+        @if(auth.user.role == 'admin')
+        <li class="nav-item">
+          <a class="nav-link" href="/add-product" style="color:white">Προσθήκη Λειτουργίας</a>
+          <span class="sr-only">(current)</span>
+        </li>
+        @endif
+          @if(auth.user)
+          <li class="nav-item active">
+            <a class="nav-link"> <span style="color:white"> Γειά σου </span> <span style="color:green">{{auth.user.username}}</span> !</a>
+            <span class="sr-only">(current)</span>
+          </li>
+          @endif
+          @if(auth.user)
+          <li>
+            <a class="nav-link active" href="/help">Βοήθεια
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          @endif
+          <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+          </li>
+          @if(auth.user)
+          <li>
+            <a class="nav-link" href="/logout">Αποσύνδεση</a>
+          </li>
+          @endif
+          
+          @if(!auth.user)
+          <li>
+            <a class="nav-link" href="/login"><span style="color:white">Είσοδος</span></a>
+          </li>
+          @endif
+          @if(!auth.user)
+          <li>
+            <a class="nav-link" href="/register"><span style="color:white">Εγγραφή</span></a>
+          </li>
+          @endif
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+    <div class="container">
+
+@if(valid>0)
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <h4 class="alert-heading">Βοήθεια!</h4>
+      <p>Παρατηρήθηκε δυσκολία κατανόησης μιας ή παραπάνω προπαίδειας.</p>
+      @each(report in reports)
+      <hr>
+      <p class="mb-0">Ξαναδιάβασε την <a href="/product/{{report.lesson}}">θεωρία</a> της προπαίδειας του {{lesson}} και κάνε μερικά επαναληπτικά τεστ για την καλύτερη κατανόηση.</p>
+      @endeach
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+@endif
+    <div class="row">
+
+      <div class="col-lg-3">
+
+        <h1 class="my-4">Κατηγορίες</h1>
+        <div class="list-group">
+        <a  href="/" class="list-group-item">Όλες</a>
+          @each(category in categories)
+        <a  href="/products/{{category.id}}" class="list-group-item">{{category.name}}</a>
+          @endeach
+
+        </div>
+
+      </div>
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+        <div class="row" style="padding-top:100px;">
+
+          @each(product in products)
+            
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100" >
+              <a href="#"><img class="card-img-top" src="{{product.url}}" alt=""  style = "height: 350px"></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="/product/{{product.id}}">{{product.name}}</a>
+                </h4>
+                <p class="card-text">{{product.description}}</p>
+              </div>
+              <!-- <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              </div> -->
+            </div>
+          </div>
+
+          @endeach
+
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Ο μαθηματικός 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @include('parts.head')  
+</head>
+
+<body>
+  <!-- Navigation -->
+    @include('parts.nav')  
+
+      @if(err)
+  <center style="margin:10px;">  <span style="color:red;" >{{err}}</span>    </center>       
+  @endif
+
+@if(succ)
+  <center style="margin:10px;"><span style="color:green" >{{succ}}</span></center>
+@endif
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+      @include('parts.sidebar')  
+    
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+          @if(auth.user.role == 'farm')
+            <center><h2>Επιλογή κατηγορίας </h2></center>
+          @endif
+
+          @if(auth.user.role == 'supplier')
+            <center><h2>Επιλογή κουπονιού </h2></center>
+          @endif
+
+          @if(auth.user.role == 'hotspot')
+            <center><h2 style="margin:5px;margin-bottom:40px;">Καταχώρηση Παράδοσης </h2></center>
+          @endif
+
+        <div class="row" >
+          
+        @if(auth.user.role == 'farm')
+          @each(category in categories)
+
+          <div class="col-lg-6 col-md-6 mb-6">
+            <div class="card h-100" >
+              <a href="#"><img class="card-img-top" src="{{category.type}}.png" alt=""  style = "height: 300px"></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="/buy/{{category.id}}">{{category.name}}</a>
+                </h4>
+                <p class="card-text"></p>
+              </div>
+              <!-- <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              </div> -->
+            </div>
+          </div>
+
+          @endeach
+        @endif
+
+        @if(auth.user.role == 'supplier')
+
+          @each(coupon in coupons)
+
+          <div class="col-lg-6 col-md-6 mb-6">
+            <div class="card h-100" >
+              <a href="#"><img class="card-img-top" src="/img/coupon.png" alt=""  style = "height: 250px"></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="/coupon/{{coupon.id}}">{{coupon.name}}</a>
+                </h4>
+                <h5>Points {{coupon.points}}</h5>
+
+                <p class="card-text">{{coupon.description}}</p>
+              </div>
+              <!-- <div class="card-footer">
+                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+              </div> -->
+            </div>
+          </div>
+
+          @endeach
+        @endif
+
+
+        @if(auth.user.role == 'hotspot')
+         
+          <div class="col-lg-12 col-md-12 mb-12">
+            <form method="POST" action="/add-points" style = "width:100%">
+                    {{ csrfField() }}
+                  <div class="form-row">
+          
+                  <div class="form-group col-md-6">
+                        <label for="inlineFormInputGroupUsername">Ποσότητα</label>
+
+                  <div class="input-group" >
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">kg</div>
+                    </div>
+                    <input type="number" id='posothta' onchange="changeValue()" class="form-control" name ="quantity" id="inlineFormInputGroupUsername" placeholder="Ποσότητα" required>
+                  </div>
+                  </div>
+              
+                  <div class="form-group col-md-6">
+                        <label for="inlineFormInputGroupUsername">Πόντοι</label>
+
+                  <div class="input-group" >
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">Πόντοι</div>
+                    </div>
+                    <input type="text" id='timh'  class="form-control" name ="points" id="inlineFormInputGroupUsername" placeholder="Πόντοι" readonly>
+                  </div>
+                  </div>
+                  
+                </div>
+
+                      <div class="form-row">
+                        <div class="form-group col-md-8">
+                          <label for="inputAddress">Κωδικός Πελάτη</label>
+                          <input type="text" class="form-control" name="usercode" id="inputAddress" placeholder="Κωδικός Πελάτη" required> 
+                        </div>
+                         <div class="form-group col-md-4">
+                          <label for="inputAddress">Επισύναψη φωτογραφίας </label>
+                          <input type="file" class="form-control-file" id="exampleFormControlFile1" accept="image/png, image/jpeg, image/jpg">
+                        </div>
+                      </div>
+                
+                <div class="form-group col-md-12" style="padding-left: 0px">
+                    <label for="inputState">Κατηγορία</label>
+                    <select name="category" inputState" class="form-control">
+                    @each(category in categories)
+                    <option value="{{category.id}}">{{category.name}}</option>
+                    @endeach
+                    </select>
+                  </div>
+
+                      <button type="submit" class="btn btn-success" style="margin-bottom:40px;">Καταχώρηση Παράδοσης</button>
+              </form>
+              </div>
+        @endif
+
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+    @include('parts.footbar')
+
+<script>
+function changeValue(){
+const posothta = document.getElementById('posothta');
+const timh = document.getElementById('timh');
+
+console.log()
+
+timh.value = posothta.value*100
+}
+</script>
+
+</body>
+</html>

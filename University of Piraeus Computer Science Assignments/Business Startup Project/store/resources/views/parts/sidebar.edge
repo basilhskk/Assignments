@@ -1,0 +1,27 @@
+  <div class="col-lg-3">
+
+        <h2 class="my-4">Επιλογές</h2>
+        <div class="list-group">
+        @if(auth.user.role == 'hotspot')
+          <a  href="/" class="list-group-item">Καταχώρηση Παράδοσης</a>
+        @endif
+        @if(auth.user.role == 'farm')
+          <a  href="/" class="list-group-item">Αγορά</a>
+        @endif
+        @if(auth.user.role == 'supplier')
+          <a  href="/" class="list-group-item">Κουπόνια</a>
+        @endif
+
+        @if(auth.user.role == 'farm')
+          <a  href="/add-product" class="list-group-item">Προσθήκη Κουπονιού</a>
+        @endif
+
+        <a  href="/profile" class="list-group-item">Προφίλ</a>
+        
+        @if(auth.user.role == 'supplier')
+        <a  href="/hotspots" class="list-group-item">Hotspots</a>
+        @endif
+
+        </div>
+
+      </div>

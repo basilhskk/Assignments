@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Music Recommender</string>
+    <string name="regTitle">Δημιουργία Λογαριασμού</string>
+    <string name="loginTitle">Σύνδεση</string>
+    <string name="passwordHint">Κωδικός</string>
+    <string name="Regbtn">Εγγραφή</string>
+    <string name="Loginbtn">Σύνδεση</string>
+    <string name="LoginRdr">Έχεις ήδη λογαριασμό; Σύνδεση.</string>
+    <string name="RegisterRdr">Δεν έχεις λογαριασμό; Εγγραφή.</string>
+    <string name="unameErr">Το username δεν μπορεί να είναι άδειο</string>
+    <string name="passErr">Ο κωδικός δεν μπορεί να είναι άδειος</string>
+    <string name="passErrLength">Ο κωδικός δεν μπορεί να είναι λιγότερο απο 6 χαρακτήρες</string>
+    <string name="mailErr">Το email δεν μπορεί να είναι άδειο</string>
+    <string name="registerToast">Ο χρήστης εγγράφηκε επιτυχώς</string>
+    <string name="err">Λάθος</string>
+    <string name="loginToast">Ο χρήστης συνδέθηκε επιτυχώς</string>
+    <string name="validateErr">Λάθος επiβεβαίωσης</string>
+    <string name="menuLogout">Αποσύνδεση</string>
+    <string name="logout">Αποσύνδεση</string>
+    <string name="language">Γλώσσα</string>
+    <string name="settings">Ρυθμίσεις</string>
+    <string name="your_recommendation">Η πρόταση σου</string>
+    <string name="my_recommendations">Οι προτάσεις μου</string>
+    <string name="top_rcommendations_for_your_region">Κορυφαιές προτάσεις για την χώρα σου</string>
+    <string name="areas">Περιοχές</string>
+    <string name="my_areas">Οι περιοχές μου</string>
+    <string name="set_new_area">Προσθήκη περιοχής</string>
+    <string name="myAreas">Οι περιοχές μου</string>
+    <string name="regionRecommend">Προτάσεις για την χώρα σου</string>
+    <string name="setAreas">Προσθήκη περιοχών</string>
+    <string name="likings">"Τι σου αρέσει να ακούς; "</string>
+    <string name="Recommend">Πρόταση</string>
+    <string name="title_activity_select_area">Χάρτης</string>
+    <string name="title_location_permission">Άδεια τοποθεσίας</string>
+    <string name="text_location_permission">Παρακαλώ αποδεχτείτε την άδεια τοποθεσίας για να χρησιμοποιήσετε όλες τις λειτουργίες της εφαρμογής</string>
+    <string name="ok">Εντάξει</string>
+    <string name="setTags">Διάλεξε οτι σου αρέσει</string>
+    <string name="dismiss">Κλείσιμο</string>
+    <string name="clearAll">Καθαρισμός</string>
+    <string name="tagsTitle">Διάλεξε τα αγαπημένα σου είδη</string>
+    <string name="locationError">Απαιτείται άδεια τοποθεσίας για αυτή την ενέργεια</string>
+    <string name="areaSuccess">Αποθηκεύτηκε νέα περιοχή</string>
+    <string name="areaError">Παρακαλώ πρόσθεσε μια περιοχή για εξατομικευμένες προτάσεις</string>
+    <string name="farAwayFromAreas">Φαίνεται να μην είσαι κοντά σε κάποια απο τις περιοχές σου</string>
+    <string name="zeroAreas">Δεν έχεις ορίσει περιοχές. Παρακαλώ πρόσθεσε μια περιοχή για εξατομικευμένες προτάσεις</string>
+</resources>

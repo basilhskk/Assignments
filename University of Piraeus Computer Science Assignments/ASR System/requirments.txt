@@ -1,0 +1,9 @@
+tflearn==0.3.2
+numpy==1.14.3
+keras==2.2.4
+librosa==0.6.1
+tensorflow==1.8.0
+scipy==1.16.3
+matplotlib==41.0.1
+more_itertools==1.11.0
+tqdm==4.23.3

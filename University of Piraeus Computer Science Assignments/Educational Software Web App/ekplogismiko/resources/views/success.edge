@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+  <title>Ο Μαθηματικός</title>
+
+   <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Custom styles for this template -->
+  <style>
+    body{
+      padding-top: 56px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Ο μαθηματικός</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Αρχική
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#"></a>
+        </li>
+
+          @if(auth.user.role == 'admin')
+          <li class="nav-item">
+            <a class="nav-link" href="/add-product" style="color:white">Προσθήκη Λειτουργίας</a>
+            <span class="sr-only">(current)</span>
+          </li>
+          @endif
+          @if(auth.user)
+          <li class="nav-item">
+            <a class="nav-link"> <span style="color:white"> Γεία σου </span> <span style="color:green">{{auth.user.username}}</span> !</a>
+            <span class="sr-only">(current)</span>
+          </li>
+          @endif
+          <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+          </li>
+          @if(auth.user)
+          <li>
+            <a class="nav-link" href="/logout">Αποσύνδεση</a>
+          </li>
+          @endif
+          @if(!auth.user)
+          <li>
+            <a class="nav-link" href="/login"><span style="color:white">Είσοδος</span></a>
+          </li>
+          @endif
+          @if(!auth.user)
+          <li>
+            <a class="nav-link" href="/register"><span style="color:white">Εγγραφή</span></a>
+          </li>
+          @endif
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-3">
+        <h1 class="my-4"></h1>
+        <div class="list-group">
+          <a href ="#" onclick="window.history.back();" class="list-group-item active"> &larr; Πίσω</a>
+        </div>
+      </div>
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+
+        <div class="card mt-4">
+          <div class="card-body">
+            <img class="card-img-top img-fluid" src="/img/success.jpg" alt="">
+
+          </div>
+        </div>
+        <!-- /.card -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Ο μαθηματικός 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    var form = document.getElementById("testForm"); 
+    document.getElementById("submitForm").addEventListener("click", function () { form.submit(); });
+
+  </script>
+</body>
+
+</html>

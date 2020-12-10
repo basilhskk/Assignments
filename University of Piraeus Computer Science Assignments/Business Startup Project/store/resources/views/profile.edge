@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+      @include('parts.head')  
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+      @include('parts.nav')  
+
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      @include('parts.sidebar')  
+
+      <!-- /.col-lg-3 -->
+
+        <div class="col-lg-9">
+
+        <div class="card mt-4">
+          <div class="card-body">
+            <h3 class="card-title">{{auth.user.username}}</h3>
+            <h5>Κωδικός Πελάτη: {{auth.user.uuid}}</h5>
+            @if(auth.user.role == 'supplier')
+            <p class="card-text">Διαθέσιμοι πόντοι {{auth.user.points}}</p>
+            @endif
+          </div>
+        </div>
+        <!-- /.card -->
+
+        <div class="card card-outline-secondary my-4">
+          <div class="card-header">
+            Επιλογές
+          </div>
+          <div class="card-body">
+            
+          @if(auth.user.role == 'hotspot')
+            <a href="#" class="btn btn-info">Αλλαγή Διεύθυνσης</a>
+           <br><br>
+          @endif
+            <a href="#" class="btn btn-info">Αλλαγή Κωδικού</a>
+           <br><br>
+           <a href="#" class="btn btn-info">Αλλαγή email επικοινωνίας!</a>
+            <br><br>
+           <a href="#" class="btn btn-danger">Διαγραφή Λογαριασμού!</a>
+
+          </div>
+        </div>
+        <!-- /.card -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+      @include('parts.footbar')  
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

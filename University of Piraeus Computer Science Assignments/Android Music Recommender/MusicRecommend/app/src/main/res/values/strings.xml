@@ -1,0 +1,109 @@
+<resources>
+    <string name="app_name">Music Recommender</string>
+    <string name="regTitle">Create New Account</string>
+    <string name="loginTitle">Log into your account</string>
+    <string name="UnameHint">Username</string>
+    <string name="emailHint">E-mail</string>
+    <string name="passwordHint">Password</string>
+    <string name="Regbtn">Register</string>
+    <string name="Loginbtn">Login</string>
+    <string name="LoginRdr">Already Registered? Login Here.</string>
+    <string name="RegisterRdr">Not registered yet? Register Here.</string>
+    <string name="unameErr">Username can\'t be empty.</string>
+    <string name="passErr">Password can\'t be empty.</string>
+    <string name="passErrLength">Password can\'t be less than 6 chars long.</string>
+    <string name="mailErr">Email can\'t be empty.</string>
+    <string name="registerToast">User Registered Successfully</string>
+    <string name="err">Error.</string>
+    <string name="loginToast">User Logged in Successfully</string>
+    <string name="validateErr">Validation Error.</string>
+    <string name="menuLogout">Logout</string>
+    <string name="apiError" translatable="false">Api Error</string>
+    <string name="myAreas">My Areas</string>
+    <string name="regionRecommend">Recommends For Your Region</string>
+    <string name="setAreas">Set Areas</string>
+    <string name="likings">What do you like to listen to ?</string>
+    <string name="Recommend">Recommend !</string>
+    <string name="title_activity_select_area">Map</string>
+    <string name="title_location_permission">"Location Permission "</string>
+    <string name="text_location_permission">Please allow location permission to get the most out of this application</string>
+    <string name="ok" translatable="false">ok</string>
+    <string name="setTags">Pick what you like</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="clearAll">Clear All</string>
+    <string name="tagsTitle">"Pick you fav genres! "</string>
+    <string name="locationError">Need location permission for this action</string>
+    <string name="locationSuccess">Location Permission Granted</string>
+    <string name="areaSuccess">New area saved !</string>
+    <string name="areaError">"Please add an area to have personalized recommendations! "</string>
+    <string name="farAwayFromAreas">You seem to be away from your set areas.</string>
+    <string name="zeroAreas">You dont have any areas. Please add one first</string>
+    <string name="my_areas">My Areas</string>
+    <string name="set_new_area">Set new Area</string>
+    <string name="areas">Areas</string>
+    <string name="my_recommendations">My Recommendations</string>
+    <string name="top_rcommendations_for_your_region">Top Rcommendations For Your Region</string>
+    <string name="settings">Settings</string>
+    <string name="language">Language</string>
+    <string name="logout">Logout</string>
+    <string name="your_recommendation">Your Recommendation</string>
+    <string-array name="langs">
+        <item>Default</item>
+        <item>English</item>
+        <item>Greek</item>
+    </string-array>
+
+    <string-array name="genres">
+        <item>rock</item>
+        <item>electronic</item>
+        <item>seen live</item>
+        <item>alternative</item>
+        <item>indie</item>
+        <item>pop</item>
+        <item>female vocalists</item>
+        <item>metal</item>
+        <item>alternative rock</item>
+        <item>jazz</item>
+        <item>classic rock</item>
+        <item>ambient</item>
+        <item>experimental</item>
+        <item>folk</item>
+        <item>punk</item>
+        <item>indie rock</item>
+        <item>Hip-Hop</item>
+        <item>hard rock</item>
+        <item>instrumental</item>
+        <item>black metal</item>
+        <item>singer-songwriter</item>
+        <item>dance</item>
+        <item>80s</item>
+        <item>Progressive rock</item>
+        <item>death metal</item>
+        <item>heavy metal</item>
+        <item>hardcore</item>
+        <item>british</item>
+        <item>soul</item>
+        <item>chillout</item>
+        <item>electronica</item>
+        <item>Classical</item>
+        <item>rap</item>
+        <item>industrial</item>
+        <item>Soundtrack</item>
+        <item>punk rock</item>
+        <item>blues</item>
+        <item>thrash metal</item>
+        <item>90s</item>
+        <item>acoustic</item>
+        <item>metalcore</item>
+        <item>psychedelic</item>
+        <item>japanese</item>
+        <item>post-rock</item>
+        <item>Progressive metal</item>
+        <item>german</item>
+        <item>hip hop</item>
+        <item>funk</item>
+        <item>new wave</item>
+        <item>trance</item>
+    </string-array>
+
+</resources>
