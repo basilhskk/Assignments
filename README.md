@@ -1,2 +1,3 @@
-# Assignments-
-University of Piraeus Assignments
+# Assignments
+University of Piraeus Computer Science Assignments
+
