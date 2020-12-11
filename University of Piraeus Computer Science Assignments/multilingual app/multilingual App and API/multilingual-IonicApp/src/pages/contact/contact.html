@@ -1,0 +1,20 @@
+<ion-content>
+  <div id="profile-bg"></div>
+  <div id="content">
+    <div id="profile-info">
+      <img id="profile-image" src="https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824144_960_720.png">
+      <h3 id="profile-name">{{user.username}}</h3>
+    </div>
+  </div>
+  <div text-end>
+
+    <div padding>
+      <button ion-button icon-end color="primary" (click)="logout()" block>Αποσύνδεση <ion-icon name="md-exit"></ion-icon> </button>
+    </div>
+    <div padding style="padding-top:0px;">
+      <button ion-button icon-end color="primary" (click)="delete()" block>Διαγραφή Λογαριασμού <ion-icon name="md-trash"></ion-icon> </button>
+    </div>
+
+  </div>
+  
+</ion-content>

@@ -1,0 +1,109 @@
+page-exercises {
+  ion-content {
+    color: #fff;
+    background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 15s ease infinite;
+    -moz-animation: Gradient 15s ease infinite;
+    animation: Gradient 15s ease infinite;
+  }
+
+  @-webkit-keyframes Gradient {
+    0% {
+      background-position: 0% 50%
+    }
+
+    50% {
+      background-position: 100% 50%
+    }
+
+    100% {
+      background-position: 0% 50%
+    }
+  }
+
+  @-moz-keyframes Gradient {
+    0% {
+      background-position: 0% 50%
+    }
+
+    50% {
+      background-position: 100% 50%
+    }
+
+    100% {
+      background-position: 0% 50%
+    }
+  }
+
+  @keyframes Gradient {
+    0% {
+      background-position: 0% 50%
+    }
+
+    50% {
+      background-position: 100% 50%
+    }
+
+    100% {
+      background-position: 0% 50%
+    }
+  }
+
+  .menu_btn {
+    background-color: white;
+    border-color: gray;
+    border-width: 1px;
+
+    img {
+      padding-top: 10%;
+      //padding-left: 10%;
+      width: 50%;
+      height: 50%
+    }
+
+    .title {
+      color: black;
+    }
+
+    .points {
+      color: black;
+      margin: 0px;
+      padding: 0px;
+      padding-left: 10px;
+      // font-weight: bold;
+    }
+
+    .stock {
+      color: black;
+      margin: 0px;
+      padding: 0px;
+      color: #717072;
+      padding-left: 10px;
+    }
+
+
+  }
+
+  .result {
+    border-color: grey;
+    background-color: grey;
+    border-bottom-style: solid;
+    border-width: 1px;
+
+    p {
+      padding-left: 5%;
+      color: #717072;
+    }
+  }
+
+  .tl {
+    border-right-style: solid;
+    border-bottom-style: solid;
+  }
+
+  .tr {
+    border-bottom-style: solid;
+  }
+
+}

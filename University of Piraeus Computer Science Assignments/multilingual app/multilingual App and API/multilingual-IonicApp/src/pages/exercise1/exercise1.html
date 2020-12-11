@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-navbar style="text-align:center;">
+      <ion-title>Ασκήσεις με αριμούς</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-slides #slides>
+      <ion-slide *ngFor="let image of imageContainer">
+         <img src="/assets/imgs{{image.path}}" style="height:35vh!important;">
+         <ion-item>
+          <ion-input [(ngModel)]="answer" type="text" placeholder="Πώς λέγεται στα αγγλικά;"></ion-input>
+        </ion-item>
+         <ion-row>
+            <ion-col col-12 text-center>
+              <ion-col col-6>
+                  <button ion-button  icon-end (click)="help(image.name)">Βοηθεια! <ion-icon name="md-help-circle"></ion-icon></button>
+              </ion-col>
+            <ion-col col-6>
+                <button ion-button  icon-end (click)="validate(image.name)">Απαντησε ! <ion-icon name="md-happy"></ion-icon></button>
+  
+            </ion-col>
+            </ion-col>
+         </ion-row>
+       </ion-slide>
+     </ion-slides>
+  
+  </ion-content>
+  

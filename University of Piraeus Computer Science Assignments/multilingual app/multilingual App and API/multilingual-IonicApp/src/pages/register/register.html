@@ -1,0 +1,40 @@
+<ion-content no-padding >
+    <ion-list>
+  
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input [(ngModel)]="form.email" type="email"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input [(ngModel)]="form.username" type="text"></ion-input>
+      </ion-item>
+      
+
+      <ion-item>
+          <ion-label floating>Κωδικός</ion-label>
+          <ion-input [(ngModel)]="form.password" type="password"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label floating>Επανάληψη Κωδικού</ion-label>
+          <ion-input [(ngModel)]="form.password2" type="password"></ion-input>
+        </ion-item>
+
+        <div text-end>
+
+            <div padding >
+              <button ion-button icon-end color="primary" (click)="register()" block>Εγγραφή <ion-icon name="md-create"></ion-icon></button>
+            </div>
+            
+            <div padding style="padding-top:0px;">
+              <button ion-button icon-end color="primary" (click)="open('LoginPage')" block>Σύνδεση<ion-icon name="md-arrow-forward"></ion-icon> </button>
+            </div>
+
+      
+          </div>
+      
+    </ion-list>
+  </ion-content>
+  

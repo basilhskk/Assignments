@@ -1,0 +1,25 @@
+<!-- <ion-header>
+  <ion-navbar style="text-align:center;">
+    <ion-title>Μαθήματα</ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content style="padding-top:20px;">
+  <ion-scroll style="width:100%;height:95%;" scrollY="true">
+    <ion-grid no-padding text-center>
+      <div>
+        <ion-row class="menu">
+          <ion-col col-6 (click)="open('Exercise1Page')">
+            <img src="/assets/imgs/numbers/one.png" style="height:150px;" class="category">
+            <p><Strong>Ασκήσεις με αριθμούς</Strong></p>
+          </ion-col>
+          <ion-col col-6 (click)="open('Exercise2Page')">
+            <img src="/assets/imgs/animals/frog.png" style="height:150px;" class="category">
+            <p><strong>Ασκήσεις με ζωάκια</strong></p>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-grid>
+  </ion-scroll>
+
+</ion-content>
