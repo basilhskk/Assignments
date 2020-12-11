@@ -1,0 +1,210 @@
+﻿1
+Things Fall Apart
+Chinua Achebe
+1958
+Nigeria
+English
+20.10
+2
+Fairy tales
+Hans Christian Andersen
+1836
+Denmark
+Danish
+17.90
+3
+The Divine Comedy
+Dante Alighieri
+1315
+Italy
+Italian
+19.30
+4
+Pride and Prejudice
+Jane Austen
+1813
+United Kingdom
+English
+20.30
+5
+Hunger
+Knut Hamsun
+1890
+Norway
+Norwegian
+17.60
+6
+Molloy
+Samuel Beckett
+1952
+Republic of Ireland
+French, English
+25.60
+7
+The Decameron
+Giovanni Boccaccio
+1351
+Italy
+Italian
+10.20
+8
+Ficciones
+Jorge Luis Borges
+1965
+Argentina
+Spanish
+22.40
+9
+Wuthering Heights
+Emily Bronte
+1847
+United Kingdom
+English
+14.20
+10
+The Stranger
+Albert Camus
+1942
+Algeria, French Empire
+French
+18.50
+11
+Poems
+Paul Celan
+1952
+Romania, France
+German
+32.00
+12
+Journey to the End of the Night
+Louis Celine
+1932
+France
+French
+20.50
+13
+Odyssey
+Homer
+800
+Greece
+Greek
+37.40
+14
+The Canterbury Tales
+Geoffrey Chaucer
+1450
+England
+English
+14.40
+15
+Nostromo
+Joseph Conrad
+1904
+United Kingdom
+English
+32.00
+16
+Great Expectations
+Charles Dickens
+1861
+United Kingdom
+English
+19.40
+17
+Jacques the Fatalist
+Denis Diderot
+1796
+France
+French
+39.60
+18
+Berlin Alexanderplatz
+Alfred Doblin
+1929
+Germany
+German
+30.00
+19
+The Idiot
+Fyodor Dostoevsky
+1869
+Russia
+Russian
+25.60
+20
+Middlemarch
+George Eliot
+1871
+United Kingdom
+English
+20.00
+21
+Invisible Man
+Ralph Ellison
+1952
+United States
+English
+28.10
+22
+Medea
+Euripides
+431
+Greece
+Greek
+10.40
+23
+Absalom Absalom
+William Faulkner
+1936
+United States
+English
+31.30
+24
+Madame Bovary
+Gustave Flaubert
+1857
+France
+French
+22.80
+25
+Sentimental Education
+Gustave Flaubert
+1869
+France
+French
+20.60
+26
+Gypsy Ballads
+Federico Garcia Lorca
+1928
+Spain
+Spanish
+21.80
+27
+Love in the Time of Cholera
+Gabriel Garcia Marquez
+1985
+Colombia
+Spanish
+26.80
+28
+Faust
+Johann Wolfgang von Goethe
+1832
+Saxe-Weimar
+German
+15.80
+29
+Dead Souls
+Nikolai Gogol
+1842
+Russia
+Russian
+33.20
+30
+The Tin Drum
+Gunter Grass
+1959
+Germany
+German
+20.00
